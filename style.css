@@ -1,27 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Arvo&display=swap');
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #fefefe;
   color: #111;
 }
 header {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   text-align: center;
   border-bottom: 1px solid #ccc;
 }
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+}
+header h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 0.8rem;
+}
+.pronouns {
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: 0.8rem;
 }
 nav {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
-nav a {
+.cv-link {
   text-decoration: none;
   font-size: 1.1rem;
-  color: #0056b3;
-  border-bottom: 1px dotted #0056b3;
+  color: #9370DB;
+  font-weight: 600;
 }
 main {
   display: flex;
@@ -40,32 +58,216 @@ section.text {
 section.photo {
   flex: 1;
   text-align: center;
-  min-width: 250px;
+  min-width: 200px;
 }
 section.photo img {
-  max-width: 100%;
+  width: 240px;
   border-radius: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
-section.photo .title {
-  font-weight: bold;
-  margin-bottom: 1rem;
+section.photo .credit {
+  font-size: 0.7rem;
+  color: #555;
+  margin-bottom: 0.2rem;
 }
-section.photo .icons a {
-  margin: 0 0.3rem;
-  display: inline-block;
+section.photo .credit a {
+  color: #9370DB;
+  text-decoration: none;
+}
+section.photo .icons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 6px;
+  padding: 0 4px;
+}
+section.photo .icons div {
+  text-align: center;
+  font-size: 0.5rem;
+  color: #9370DB;
+  width: auto;
+  flex: 1;
+}
+section.photo .icons div a {
+  color: #9370DB;
+  text-decoration: none;
 }
 section.photo .icons img {
-  width: 28px;
-  height: 28px;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  width: 16px;
+  height: 16px;
+  display: block;
+  margin: 0 auto 0.2rem auto;
+  opacity: 0.85;
 }
 section.photo .icons img:hover {
   opacity: 1;
 }
-.credit {
-  font-size: 0.8rem;
-  color: #555;
-  margin-top: 0.5rem;
+.cv-embed {
+  padding: 2rem;
+}
+
+
+.cv-container {
+  background-color: #E6E6FA;
+  padding: 2rem 0;
+}
+
+.cv-container iframe {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  margin: 0 auto;
+  display: block;
+  width: 90vw;
+  height: 95vh;
+}
+
+.cv-embed-main {
+  background-color: #E6E6FA;
+  padding: 0.5rem 0;
+}
+
+.cv-embed-main {
+  background-color: #E6E6FA;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.cv-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.cv-wrapper iframe {
+  transform: scale(0.965);
+  transform-origin: top center;
+
+  width: 60vw;
+  height: 99vh;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.lavender-wrap {
+  background-color: #E6E6FA;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+.letterboxd-container {
+  position: relative;
+  display: inline-block;
+}
+
+.arrow-and-text {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  padding-left: 10px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.arrow {
+  width: 100px;
+  height: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+.letterboxd-container:hover .arrow-and-text {
+  opacity: 1;
+}
+.letterboxd-container .arrow-and-text .hover-text {
+  color: #A9D6D3 !important;
+}
+.letterboxd-container:hover .arrow { opacity: 1; }
+.letterboxd-container .hover-text {
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #A9D6D3;
+  margin: 0;
+  transform: translate(-115px, -80px);
+  opacity: 0;
+  transition: opacity 0.5s ease 0.5s;
+}
+
+.letterboxd-container:hover .hover-text {
+  opacity: 1;
+}
+.letterboxd-container .arrow {
+  transform: translateY(-20px);
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  transition: stroke-dashoffset 2s ease;
+}
+
+.letterboxd-container:hover .arrow {
+  stroke-dashoffset: 0;
+}
+a {
+  font-family: 'Roboto', sans-serif;
+  color: #646D6D;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: #646D6D;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease, text-decoration-style 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+a:hover {
+  color: #A9D6D3;
+  text-decoration-style: solid;
+  text-decoration-color: #A9D6D3;
+}
+.inspiration-link {
+  color: #888;
+  text-decoration: none;
+  border-bottom: 1px dotted #888;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+
+.inspiration-link {
+  color: #888;
+  text-decoration: none;
+  border-bottom: 1px dotted #888;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+.inspiration-link.thanks:hover {
+  color: #A9D6D3;
+  border-bottom-color: #A9D6D3;
+}
+.inspiration-link.for:hover {
+  color: #E6E6FA;
+  border-bottom-color: #E6E6FA;
+}
+.inspiration-link.inspiration:hover {
+  color: #FCEF91;
+  border-bottom-color: #FCEF91;
+}
+
+header h1 a:hover,
+nav a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.cv-link:hover {
+  color: #9370DB !important;
+  text-decoration: none !important;
 }
